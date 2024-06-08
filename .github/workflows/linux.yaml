@@ -1,0 +1,5 @@
+name: Linux
+on: push
+jobs:
+  BuildTestAndReportCoverage:
+    uses: Keepsake/gha-helpers/.github/workflows/linux.yaml@main

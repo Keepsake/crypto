@@ -1,0 +1,5 @@
+name: Windows
+on: push
+jobs:
+  BuildTestAndReportCoverage:
+    uses: Keepsake/gha-helpers/.github/workflows/windows.yaml@main

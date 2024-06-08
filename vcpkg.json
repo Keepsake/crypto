@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    "gtest",
+    {
+      "name": "openssl",
+      "platform": "windows, osx"
+    },
+    "boost-asio",
+    "ks-cmake-helpers",
+    "ks-log"
+  ]
+}
