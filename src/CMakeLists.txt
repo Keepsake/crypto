@@ -28,7 +28,6 @@ target_sources(
         ${PROJECT_SOURCE_DIR}/include/
       FILES
         ${PROJECT_SOURCE_DIR}/include/ks/crypto.hpp
-        ${PROJECT_SOURCE_DIR}/include/ks/crypto/as_bytes.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/base64.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/base64_url.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/detail/bio_deleter.hpp

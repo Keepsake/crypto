@@ -9,7 +9,6 @@
 
 #include <gtest/gtest.h>
 
-#include <ks/crypto/as_bytes.hpp>
 #include <ks/crypto/sign.hpp>
 
 #include "helpers.hpp"

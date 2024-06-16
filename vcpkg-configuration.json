@@ -9,7 +9,7 @@
     {
       "kind": "git",
       "repository": "https://github.com/Keepsake/vcpkg",
-      "baseline": "f6e14752c78d6d6b16f66b5b79aa0f4396b82970",
+      "baseline": "7016c99ab54158626bfc61221aac02e1774c6130",
       "packages": [ "ks-*" ]
     }
   ]

@@ -4,7 +4,8 @@
 
 #include <vector>
 
-#include <ks/crypto/as_bytes.hpp>
+#include <ks/serialization/as_bytes.hpp>
+
 #include <ks/crypto/jwt_signature.hpp>
 
 #include "helpers.hpp"
@@ -17,7 +18,7 @@ TEST(JwtSignature, CanConvertFromDer)
   // Convert it to JWT format.
   ks::crypto::jwt_signature jwt_signature;
   std::vector<std::byte> actual_signature;
-  jwt_signature.from_ecdsa_der(ks::crypto::as_bytes(der_signature),
+  jwt_signature.from_ecdsa_der(ks::serialization::as_bytes(der_signature),
                                actual_signature);
   // JWT P-256 signatures contain 2*32 bytes numbers.
   ASSERT_EQ(64U, actual_signature.size());

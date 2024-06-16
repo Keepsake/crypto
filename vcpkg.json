@@ -6,6 +6,7 @@
       "platform": "windows, osx"
     },
     "ks-cmake-helpers",
-    "ks-log"
+    "ks-log",
+    "ks-serialization"
   ]
 }

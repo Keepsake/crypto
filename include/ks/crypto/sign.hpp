@@ -9,7 +9,8 @@
 
 #include <openssl/evp.h>
 
-#include <ks/crypto/as_bytes.hpp>
+#include <ks/serialization/as_bytes.hpp>
+
 #include <ks/crypto/detail/digest_traits.hpp>
 
 KS_CRYPTO_NAMESPACE_BEGIN
@@ -67,7 +68,7 @@ public:
   {
     engine_.init();
 
-    (engine_.append(as_bytes(chunks)), ...);
+    (engine_.append(serialization::as_bytes(chunks)), ...);
 
     engine_.finalize(signature);
   }

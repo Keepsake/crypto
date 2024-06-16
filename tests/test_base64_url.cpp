@@ -7,7 +7,8 @@
 
 #include <gtest/gtest.h>
 
-#include <ks/crypto/as_bytes.hpp>
+#include <ks/serialization/as_bytes.hpp>
+
 #include <ks/crypto/base64_url.hpp>
 
 #include "helpers.hpp"
@@ -33,7 +34,7 @@ TEST(Base64URL, CanBeReused)
   for (auto [decoded, encoded] : data) {
     SCOPED_TRACE(decoded);
 
-    auto const bytes = ks::crypto::as_bytes(decoded);
+    auto const bytes = ks::serialization::as_bytes(decoded);
     std::vector<std::byte> const in{ bytes.begin(), bytes.end() };
     std::vector<std::byte> out{};
 

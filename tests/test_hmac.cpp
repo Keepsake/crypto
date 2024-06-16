@@ -7,7 +7,8 @@
 
 #include <gtest/gtest.h>
 
-#include <ks/crypto/as_bytes.hpp>
+#include <ks/serialization/as_bytes.hpp>
+
 #include <ks/crypto/hmac.hpp>
 
 TEST(HMACSha256, CanSignMultipleChunk)
@@ -25,7 +26,7 @@ TEST(HMACSha256, CanSignMultipleChunk)
     'n',
   };
 
-  ks::crypto::hmac_sha256 signer{ ks::crypto::as_bytes("key") };
+  ks::crypto::hmac_sha256 signer{ ks::serialization::as_bytes("key") };
   std::vector<std::byte> actual_signature;
   signer.sign(actual_signature, data1, data2, data3, data4, data5);
 
@@ -45,7 +46,7 @@ TEST(HMACSha256, CanSignMultipleChunk)
 
 TEST(HMACSha256, CanBeReused)
 {
-  ks::crypto::hmac_sha256 signer{ ks::crypto::as_bytes("key") };
+  ks::crypto::hmac_sha256 signer{ ks::serialization::as_bytes("key") };
 
   {
     std::string const data{ "abc" };
