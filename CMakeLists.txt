@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(KsCrypto LANGUAGES CXX)
+project(KsCrypto VERSION 1 LANGUAGES CXX)
 
 find_package(OpenSSL REQUIRED)
 find_package(KsCMakeHelpers CONFIG REQUIRED)
