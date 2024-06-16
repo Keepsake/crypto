@@ -24,8 +24,8 @@ get_test_file(std::string_view name) noexcept
   using std::filesystem::path;
   auto const fullpath = path(KS_TEST_DIR) / path(name);
 
-  return std::unique_ptr<std::FILE, deleter>{ std::fopen(fullpath.c_str(),
-                                                         "r") };
+  return std::unique_ptr<std::FILE, deleter>{ std::fopen(
+      fullpath.string().c_str(), "r") };
 }
 
 inline std::string
@@ -35,7 +35,7 @@ read_test_data(std::string_view name) noexcept
   auto const fullpath = path(KS_TEST_DIR) / path(name);
 
   std::ostringstream out;
-  out << std::ifstream{ fullpath.c_str() }.rdbuf();
+  out << std::ifstream{ fullpath.string().c_str() }.rdbuf();
 
   return std::move(out).str();
 }
