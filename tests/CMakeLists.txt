@@ -12,6 +12,8 @@ add_executable(test-crypto
 target_link_libraries(test-crypto
   PRIVATE
     GTest::gtest_main
+    OpenSSL::Crypto
+    OpenSSL::applink
     ks-crypto
 )
 
