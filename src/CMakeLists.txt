@@ -38,12 +38,6 @@ target_sources(
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/sign.hpp
 )
 
-target_compile_features(
-  ks-crypto
-  PUBLIC
-    cxx_std_23
-)
-
 target_link_libraries(
   ks-crypto
   PUBLIC
