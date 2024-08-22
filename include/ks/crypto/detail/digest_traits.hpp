@@ -1,8 +1,7 @@
 #pragma once
 
-#include <ks/crypto/detail/namespace.hpp>
-
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 namespace detail {
 
 struct digest_sha256 final
@@ -16,4 +15,5 @@ struct digest_sha512 final
 };
 
 } // namespace detail
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

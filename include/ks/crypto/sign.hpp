@@ -13,7 +13,8 @@
 
 #include <ks/crypto/detail/digest_traits.hpp>
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 class sign_engine final
 {
@@ -80,4 +81,5 @@ private:
 using sign_sha256 = basic_signer<detail::digest_sha256>;
 using sign_sha512 = basic_signer<detail::digest_sha512>;
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

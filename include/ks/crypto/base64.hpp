@@ -10,9 +10,9 @@
 #include <vector>
 
 #include <ks/crypto/detail/bio_deleter.hpp>
-#include <ks/crypto/detail/namespace.hpp>
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 class base64_encoder final
 {
@@ -50,4 +50,5 @@ private:
   std::unique_ptr<BIO, detail::bio_deleter> base64_bio_;
 };
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

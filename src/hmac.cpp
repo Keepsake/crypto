@@ -7,11 +7,10 @@
 #include <openssl/ecdsa.h>
 #include <openssl/pem.h>
 
-#include <ks/log.hpp>
-
 #include "detail/check.hpp"
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 hmac_engine::hmac_engine(char const* digest,
                          std::span<std::byte const> key) noexcept
@@ -74,4 +73,5 @@ hmac_engine::finalize(std::vector<std::byte>& signature) noexcept
   signature.resize(signature_length);
 }
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

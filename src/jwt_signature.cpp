@@ -1,11 +1,14 @@
 #include <ks/crypto/jwt_signature.hpp>
 
+#include <memory>
+
 #include <openssl/bn.h>
 #include <openssl/ecdsa.h>
 
 #include "detail/check.hpp"
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 namespace {
 
@@ -51,4 +54,5 @@ jwt_signature::from_ecdsa_der(std::span<std::byte const> der_signature,
                 "Failed to deserialize S from ECDSA signature");
 }
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

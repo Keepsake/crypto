@@ -7,7 +7,8 @@
 #include "detail/check.hpp"
 #include "detail/new_bio.hpp"
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 sign_engine::sign_engine(char const* digest, std::string_view key) noexcept
 {
@@ -78,4 +79,5 @@ sign_engine::finalize(std::vector<std::byte>& signature) noexcept
   signature.resize(signature_length);
 }
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

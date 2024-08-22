@@ -8,9 +8,9 @@
 #include <vector>
 
 #include <ks/crypto/base64.hpp>
-#include <ks/crypto/detail/namespace.hpp>
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 /**
  *  Implement https://datatracker.ietf.org/doc/html/rfc7515#page-55
@@ -43,4 +43,5 @@ private:
   std::string buffer_{};
 };
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

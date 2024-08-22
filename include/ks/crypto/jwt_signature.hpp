@@ -5,9 +5,8 @@
 #include <span>
 #include <vector>
 
-#include <ks/crypto/detail/namespace.hpp>
-
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 /**
  *  Implement JSON Web Algorithms rfc7518 signature.
@@ -19,4 +18,5 @@ public:
                       std::vector<std::byte>& jwt_signature) noexcept;
 };
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

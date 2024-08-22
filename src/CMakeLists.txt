@@ -1,13 +1,15 @@
 add_library(ks-crypto 
   base64.cpp
   base64_url.cpp
+  detail/check.hpp
+  detail/new_bio.cpp
+  detail/new_bio.hpp
   hmac.cpp
   jwt_signature.cpp
   sign.cpp
-  detail/check.hpp
-  detail/new_bio.hpp
-  detail/new_bio.cpp
 )
+
+add_library(${PROJECT_NAME}::ks-crypto ALIAS ks-crypto)
 
 target_include_directories(
   ks-crypto
@@ -32,7 +34,6 @@ target_sources(
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/base64_url.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/detail/bio_deleter.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/detail/digest_traits.hpp
-        ${PROJECT_BINARY_DIR}/include/ks/crypto/detail/namespace.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/hmac.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/jwt_signature.hpp
         ${PROJECT_SOURCE_DIR}/include/ks/crypto/sign.hpp
@@ -43,13 +44,6 @@ target_link_libraries(
   PUBLIC
     OpenSSL::Crypto
   PRIVATE
-    KsLog::ks-log
-)
-
-ks_install(
-  TARGETS
-    ks-crypto
-  DEPENDENCIES
-    OpenSSL
-    KsLog
+    KsFatal::ks-fatal
+    KsSerialization::ks-serialization
 )

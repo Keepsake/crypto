@@ -4,9 +4,8 @@
 
 #include <openssl/bio.h>
 
-#include <ks/crypto/detail/namespace.hpp>
-
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 namespace detail {
 
 struct bio_deleter final
@@ -16,4 +15,5 @@ struct bio_deleter final
 };
 
 } // namespace detail
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

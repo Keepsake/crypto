@@ -1,8 +1,9 @@
 #include <ks/crypto/base64_url.hpp>
 
-#include <ks/log.hpp>
+#include <ks/fatal.hpp>
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 void
 base64_url_encoder::encode(std::span<std::byte const> in,
@@ -60,10 +61,11 @@ base64_url_decoder::decode(std::string_view in,
       buffer_.push_back('=');
       break;
     default:
-      log::fatal("illegal base64url-encoded string '{}'", in);
+      fatal::panic("illegal base64url-encoded string");
   }
 
   decoder_.decode(buffer_, out);
 }
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

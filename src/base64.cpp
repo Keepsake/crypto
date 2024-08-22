@@ -7,12 +7,11 @@
 
 #include <algorithm>
 
-#include <ks/log.hpp>
-
 #include "detail/check.hpp"
 #include "detail/new_bio.hpp"
 
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 
 namespace {
 
@@ -134,4 +133,5 @@ base64_decoder::decode(std::string_view in,
   out.resize(offset + size);
 }
 
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1

@@ -3,20 +3,19 @@
 #include <string_view>
 #include <utility>
 
-#include <ks/log.hpp>
+#include <ks/fatal.hpp>
 
-#include <ks/crypto/detail/namespace.hpp>
-
-KS_CRYPTO_NAMESPACE_BEGIN
+namespace ks::crypto {
+inline namespace abiv1 {
 namespace detail {
 
-template<typename... Args>
 inline constexpr void
-check(int success, std::string_view message, Args&&... args) noexcept
+check(int success, char const* reason) noexcept
 {
   if (not success) [[unlikely]]
-    log::fatal("{}\n", message, std::forward<Args>(args)...);
+    fatal::panic(reason);
 }
 
 } // namespace detail
-KS_CRYPTO_NAMESPACE_END
+} // namespace ks::crypto
+} // namespace abiv1
