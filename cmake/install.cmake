@@ -5,7 +5,8 @@ include(CMakePackageConfigHelpers)
 set(package_dependencies [[
 include(CMakeFindDependencyMacro)
 find_dependency(KsFatal 1.1.1 CONFIG)
-find_dependency(OpenSSL 3.3.0 CONFIG)
+find_dependency(KsSerialization 1.1.2 CONFIG)
+find_dependency(OpenSSL 3.2.0)
 ]])
 
 export(
@@ -31,7 +32,7 @@ if(KS_CRYPTO_INSTALL)
   install(
     TARGETS ks-crypto
     EXPORT ${PROJECT_NAME}Targets
-    FILE_SET headers
+    FILE_SET HEADERS
   )
 
   install(
